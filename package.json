@@ -1,7 +1,7 @@
 {
-  "name": "custom-hooks",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@melmerrouni/custom-hooks",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "author": "marouaneunix",
@@ -9,6 +9,14 @@
     "dist",
     "README.md"
   ],
+  "main": "./dist/custom-hooks.umd.js",
+  "module": "./dist/custom-hooks.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/custom-hooks.es.js",
+      "require": "./dist/custom-hooks.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "test": "vitest",
