@@ -9,7 +9,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/main.tsx'),
+      entry: path.resolve(__dirname, 'src/index.tsx'),
       name: 'Custom Hooks',
       fileName: (format) => `custom-hooks.${format}.js`
     },
