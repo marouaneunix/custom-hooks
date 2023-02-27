@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import { useMouseMove } from "./useMouseMove";
+import { useMouseMove } from ".";
 
 
 
