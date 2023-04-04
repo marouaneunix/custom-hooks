@@ -16,7 +16,7 @@ const Target = () => {
 }
 
 
-describe('useKeyClick hook', () => {
+describe('useKeydownOnTextArea hook', () => {
     it('should key code when keydown', () => {
         render(<Target />);
 
