@@ -16,16 +16,12 @@ export const useLocationHash = () => {
     };
   }, []);
 
-  const updateHash = useCallback(
-    (newHash: string) => {
+  const updateHash = useCallback((newHash: string) => {
       if (newHash !== hash) {
         window.location.hash = newHash;
         setHash(newHash);
       }
-    },
-    [hash]
-  );
+    }, [hash]);
 
-
-  return [hash, updateHash];
+  return {hash, updateHash};
 };

@@ -5,17 +5,20 @@ import { ChangeEvent } from "react";
 
 
 const Target = () => {
-    const [hash, setHash] = useLocationHash();
+    const {hash, updateHash: setHash} = useLocationHash();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+        
         setHash(e.target.value);
-    }    
+    }
 
     return (
-        <div data-testid="target">
-            {hash}
+        <>
+            <div data-testid="target">
+                {hash}   
+            </div>
             <input value={hash} onChange={handleChange} aria-label="hash-input" />
-        </div>
+        </>
     )
 }
 
