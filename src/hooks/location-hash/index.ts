@@ -3,16 +3,19 @@ import { useCallback, useEffect, useState } from "react";
 export const useLocationHash = () => {
   const [hash, setHash] = useState<string>(() => window.location.hash);
 
-
+  if(typeof window === 'undefined') {
+    return {hash: '', updateHash: () => {}};
+  }
+  
   useEffect(() => {
     const hashChangeHandler = () => {
       setHash(window.location.hash);
     };
 
-    window.addEventListener("hashchange", hashChangeHandler);
+      document.addEventListener("hashchange", hashChangeHandler);
 
     return () => {
-      window.removeEventListener("hashchange", hashChangeHandler);
+      document.removeEventListener("hashchange", hashChangeHandler);
     };
   }, []);
 
