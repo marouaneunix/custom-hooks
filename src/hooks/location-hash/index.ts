@@ -6,8 +6,12 @@ export const useLocationHash = () => {
   if(typeof window === 'undefined') {
     return {hash: '', updateHash: () => {}};
   }
-  
+
   useEffect(() => {
+    if(typeof window === 'undefined') {
+      return;
+    }
+    
     const hashChangeHandler = () => {
       setHash(window.location.hash);
     };
